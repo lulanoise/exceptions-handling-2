@@ -11,12 +11,11 @@ public class Start {
         System.out.println("Enter a divisor:");
         int divisor = scanner.nextInt();
 
-        if (divisor == 0) {
-            System.out.println("It's not possible to divide by zero!");
-        } else {
+        try {
             double quotient = (double) dividend / divisor;
-            System.out.println("The quotient is " + quotient);
-
+            System.out.println("The quotient is: " + quotient);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: it's not possible to divide by zero");
         }
     }
 
